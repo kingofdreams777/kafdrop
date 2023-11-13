@@ -14,7 +14,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-
 @Component
 @ConfigurationProperties(prefix = "kafka")
 @Data
@@ -27,6 +26,10 @@ public final class KafkaConfiguration {
   private String truststoreFile;
   private String propertiesFile;
   private String keystoreFile;
+
+  public String getBrokerConnect() {
+    return this.brokerConnect;
+  }
 
   public void applyCommon(Properties properties) {
     properties.setProperty(CommonClientConfigs.BOOTSTRAP_SERVERS_CONFIG, brokerConnect);

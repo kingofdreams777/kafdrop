@@ -17,4 +17,16 @@ public final class CreateTopicVO {
 
   @Parameter(description = "Replication factor")
   int replicationFactor;
+
+  public String getName() {
+    return this.name;
+  }
+
+  public int getPartitionsNumber() {
+    return this.partitionsNumber;
+  }
+
+  public int getReplicationFactor() {
+    return this.replicationFactor;
+  }
 }
